@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <!-- <meta charset="UTF-8"> -->
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <!-- <div class="login"> -->
+	<h1>Predict Churn</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <label>Choose a country:</label>
+        <select name="country">
+            <option value="France">France</option>
+            <option value="Germany">Germany</option>
+            <option value="Spain">Spain</option>
+        </select><br>
+        <label>Credit Score: <input type="text" name="cscore" placeholder="Credit Score" required="required" /></label><br>
+        <label>Gender: <input type="text" name="gender" placeholder="Male or Female" required="required" /></label><br>
+        <label>Age: <input type="text" name="age" placeholder="Age" required="required" /></label><br>
+        <label>Tenure: <input type="text" name="tenure" placeholder="in years" required="required" /></label><br>
+        <label>Balance: <input type="text" name="balance" placeholder="Balance" required="required" /></label><br>
+        <label>Number of Product: <input type="text" name="np" placeholder="0 to 4" required="required" /></label><br>
+        <label>Credit Card: <input type="text" name="cc" placeholder="Yes:1 No:0" required="required" /></label><br>
+    	<label>Active Member: <input type="text" name="active" placeholder="Yes:1 No:0" required="required" /></label><br>
+        <label>Salary: <input type="text" name="salary" placeholder="Salary" required="required" /></label><br>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   <b>{{ prediction_text }}</b>
+
+ <!-- </div> -->
+
+
+</body>
